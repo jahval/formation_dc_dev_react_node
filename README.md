@@ -14,8 +14,17 @@ Instructions d'installation
 4. Installer mongoDB https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows/
 5. Lancer la commande en mode administrateur `"C:\Program Files\MongoDB\Server\4.2\bin\mongo.exe"`
 6. Lancer MongoDB compass et se connecter au server mongoDB avec `mongodb://127.0.0.1:27017/?compressors=zlib&gssapiServiceName=mongodb`
-7. Dans le répertoire du projet modifier `node_src/` pour lancer le serveur sur le port 3001
-8. lancer `npm start` dans `react_src/` et dans `node_src/`
+7. Créer un ficher dans `node_src` nommé `config.js` contenant le code suivant 
+```
+module.exports = {
+    mongodb: {
+        url: "mongodb://127.0.0.1:27017",
+    },
+    port: "3001"
+}
+```
+8. Dans le répertoire du projet modifier `node_src/` pour lancer le serveur sur le port 3001
+9. lancer `npm start` dans `react_src/` et dans `node_src/`
 
 
 #Linux et MacOS
@@ -25,7 +34,19 @@ Instructions d'installation
     2. Fork le projet `Dylfaen/formation_dc_dev_react_node`
 3. Installer git
 4. Cloner votre projet
-5. Dans le répertoire du projet lancer `sudo docker-compose up`
-6. L'appli react est disponible sur `localhost:3000` et le server node sur `localhost:3001`
+5. Créer un ficher dans `node_src` nommé `config.js` contenant le code suivant 
+```
+module.exports = {
+    mongodb: {
+        url: "mongodb://mongo:27017",
+    },
+    port: "3001"
+}
+```
+6. Dans le répertoire du projet lancer `sudo docker-compose up`
+7. L'appli react est disponible sur `localhost:3000` et le server node sur `localhost:3001`
+
+
+
 
 
